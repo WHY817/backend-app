@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let users = [
     { id: 'user1', username: 'user1', password: 'password1', email: 'user1@example.com' },
     { id: 'user2', username: 'user2', password: 'password2', email: 'user2@example.com' },
-    { id: 'test1', username: 'test1', password: 'test1', email: 'user3@example.com' },
+    { id: 'test1', username: 'test1', password: 'test1', email: 'user3@example.com' }
 ];
 
 let images = [
