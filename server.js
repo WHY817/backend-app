@@ -19,8 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // --- 模擬資料庫 (記憶體內儲存) ---
 let users = [
     { id: 'user1', username: 'user1', password: 'password1', email: 'user1@example.com' },
-    { id: 'user2', username: 'user2', password: 'password2', email: 'user2@example.com' },
-    { id: 'test1', username: 'test1', password: 'password2', email: 'waihang817@gmail.com' }
+    { id: 'user2', username: 'user2', password: 'password2', email: 'user2@example.com' }
 ];
 
 let images = [
@@ -131,8 +130,9 @@ app.post('/api/assessments', authenticateToken, (req, res) => {
 });
 
 // --- 啟動伺服器 ---
-app.listen(PORT, () => {
-    console.log(`後端伺服器正在運行於 http://localhost:${PORT} 或 Render 指定的 port`);
+// 明確綁定到 '0.0.0.0'，這對於容器化環境 (如 Render) 是標準做法
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`後端伺服器正在運行於 0.0.0.0:${PORT} (Render 會將流量導向此 port)`);
     console.log('--- 模擬資料庫初始狀態 ---');
     console.log('Users:', users.map(u => ({id: u.id, username: u.username})));
     console.log('Images:', images.length);
