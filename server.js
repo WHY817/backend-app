@@ -9,7 +9,7 @@ const bodyParser = require('body-parser'); // 用於解析請求主體
 // const jwt = require('jsonwebtoken'); // 用於產生 JWT (實際應用中需要)
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Render 會自動設定 PORT 環境變數
+const PORT = process.env.PORT || 10000; // Render 會自動設定 PORT 環境變數
 
 // --- 中介軟體 (Middleware) ---
 app.use(cors()); // 允許所有來源的跨域請求 (開發時方便，生產環境應設定更嚴格的規則)
